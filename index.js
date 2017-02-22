@@ -21,7 +21,7 @@ const getStatus = cb => {
 }
 
 const claim = (user, cb) => {
-  request.post(`${server}/claim/${user}`).
+  request.post(`${server}/claim?user=${user}`).
     on('response', resp => {
       if (resp.statusCode == 200)
         cb(parse(message.statusMessage))
@@ -35,7 +35,7 @@ const claim = (user, cb) => {
 }
 
 const release = (user, cb) => {
-  request.post(`${server}/release/${user}`).
+  request.post(`${server}/release?user=${user}`).
     on('response', resp => {
       if (resp.statusCode == 200)
         cb(parse(message.statusMessage))
