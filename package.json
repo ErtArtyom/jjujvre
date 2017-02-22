@@ -1,0 +1,13 @@
+{
+  "name": "kadfe-client",
+  "version": "0.0.1",
+  "description": "client code for talking to the server",
+  "main": "index.js",
+  "repository": "https://github.com/kadnerdz/kadfe-client",
+  "author": "danny clarke",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}
