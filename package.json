@@ -6,8 +6,13 @@
   "repository": "https://github.com/kadnerdz/kadfe-client",
   "author": "danny clarke",
   "license": "MIT",
+  "scripts": {
+    "test": "KADFE_SERVER=localhost KADFE_SSL=false KADFE_PORT=3000 ./node_modules/mocha/bin/mocha"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "express": "^4.15.2",
     "mocha": "^3.2.0"
   },
   "dependencies": {

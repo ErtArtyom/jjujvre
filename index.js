@@ -14,7 +14,7 @@ const parse = message => JSON.parse(message)['message']
 const coffeeEP = `${server}/coffee`
 
 // Interace
-const status = () => {
+const coffeeStatus = () => {
   return new Promise((resolve, error) => 
     request.get(coffeeEP,
       (err, resp, bod) => {
@@ -25,7 +25,7 @@ const status = () => {
   )
 }
 
-const claim = () => {
+const claimCoffee = () => {
   return new Promise((resolve, error) =>
     request.post(coffeeEP,
       (err, resp, bod) => {
@@ -36,4 +36,4 @@ const claim = () => {
   )
 }
 
-module.export = { status, claim }
+module.exports = { coffeeStatus, claimCoffee }
