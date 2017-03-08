@@ -2,12 +2,18 @@
 
 const request = require('request')
 
-const server = process.env.KADFE_SERVER
+// server address setup
+const host = process.env.KADFE_HOST
+const port = process.env.KADFE_PORT ? `:${process.env.KADFE_PORT}` : ''
+const ssl = JSON.parse(process.env.KADFE_SSL)
+const prefix = ssl ? 'https' : 'http'
+const server = `${prefix}://${host}${port}`
 
 const parse = message => JSON.parse(message)['message']
 
 const coffeeEP = `${server}/coffee`
 
+// Interace
 const status = () => {
   return new Promise((resolve, error) => 
     request.get(coffeeEP,
