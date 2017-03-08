@@ -2,8 +2,8 @@
 Small node js library to talk to the kadfe server.
 
 ## Methods
-+ `status` - Get the status of the coffee.
-+ `claim` - Claim the coffee.
++ `coffeeStatus` - Get the status of the coffee.
++ `claimStatus` - Claim the coffee.
 
 *!!* All methods return promises *!!*
 
