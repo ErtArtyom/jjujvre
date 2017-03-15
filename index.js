@@ -15,17 +15,28 @@ const coffeeEP = `${server}/coffee`
 
 // Interace
 const coffeeStatus = () => {
-  return new Promise((resolve, error) => 
+  return new Promise((resolve, error) =>
     request.get(coffeeEP,
       (err, resp, bod) => {
         if (err) error(err)
         else if (resp.statusCode !== 200) error(body)
-        else resolve(body) 
+        else resolve(body)
       })
   )
 }
 
 const claimCoffee = () => {
+  return new Promise((resolve, error) =>
+    request.delete(coffeeEP,
+      (err, resp, bod) => {
+        if (err) error(err)
+        else if (resp.statusCode !== 200) error(body)
+        else resolve(body)
+      })
+  )
+}
+
+const makeCoffee = () => {
   return new Promise((resolve, error) =>
     request.post(coffeeEP,
       (err, resp, bod) => {
@@ -36,4 +47,4 @@ const claimCoffee = () => {
   )
 }
 
-module.exports = { coffeeStatus, claimCoffee }
+module.exports = { coffeeStatus, claimCoffee, makeCoffee }
