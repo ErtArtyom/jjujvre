@@ -20,7 +20,7 @@ const coffeeStatus = () => {
       (err, resp, bod) => {
         if (err) error(err)
         else if (resp.statusCode !== 200) error(bod)
-        else resolve(bod)
+        else resolve(JSON.parse(bod))
       })
   )
 }
@@ -31,7 +31,7 @@ const claimCoffee = () => {
       (err, resp, bod) => {
         if (err) error(err)
         else if (resp.statusCode !== 200) error(bod)
-        else resolve(bod)
+        else resolve(JSON.parse(bod))
       })
   )
 }
@@ -42,7 +42,7 @@ const makeCoffee = () => {
       (err, resp, bod) => {
         if (err) error(err)
         else if (resp.statusCode !== 200) error(bod)
-        else resolve(bod)
+        else resolve(JSON.parse(bod))
       })
   )
 }
