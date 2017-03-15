@@ -7,6 +7,7 @@
   "author": "danny clarke",
   "license": "MIT",
   "scripts": {
+    "repl": "node",
     "test": "KADFE_SERVER=localhost KADFE_SSL=false KADFE_PORT=3000 ./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
