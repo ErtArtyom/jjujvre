@@ -17,10 +17,10 @@ const coffeeEP = `${server}/coffee`
 const coffeeStatus = () => {
   return new Promise((resolve, error) =>
     request.get(coffeeEP,
-      (err, resp, body) => {
+      (err, resp, bod) => {
         if (err) error(err)
-        else if (resp.statusCode !== 200) error(body)
-        else resolve(body)
+        else if (resp.statusCode !== 200) error(bod)
+        else resolve(bod)
       })
   )
 }
@@ -28,10 +28,10 @@ const coffeeStatus = () => {
 const claimCoffee = () => {
   return new Promise((resolve, error) =>
     request.delete(coffeeEP,
-      (err, resp, body) => {
+      (err, resp, bod) => {
         if (err) error(err)
-        else if (resp.statusCode !== 200) error(body)
-        else resolve(body)
+        else if (resp.statusCode !== 200) error(bod)
+        else resolve(bod)
       })
   )
 }
@@ -39,10 +39,10 @@ const claimCoffee = () => {
 const makeCoffee = () => {
   return new Promise((resolve, error) =>
     request.post(coffeeEP,
-      (err, resp, body) => {
+      (err, resp, bod) => {
         if (err) error(err)
-        else if (resp.statusCode !== 200) error(body)
-        else resolve(body)
+        else if (resp.statusCode !== 200) error(bod)
+        else resolve(bod)
       })
   )
 }
