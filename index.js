@@ -1,6 +1,7 @@
 'use strict'
 
 const request = require('request')
+const WebSocket = require('ws')
 
 // server address setup
 const host = process.env.KADFE_HOST
@@ -12,6 +13,13 @@ const server = `${prefix}://${host}${port}`
 const parse = message => JSON.parse(message)['message']
 
 const coffeeEP = `${server}/coffee`
+
+// WebSocket
+/*const openSocket() => {
+  return new WebSocket(coffeeEP, {
+    perMessageDeflate: false
+  })
+}*/
 
 // Interace
 const coffeeStatus = () => {
@@ -47,4 +55,4 @@ const makeCoffee = () => {
   )
 }
 
-module.exports = { coffeeStatus, claimCoffee, makeCoffee }
+module.exports = { openSocket, coffeeStatus, claimCoffee, makeCoffee }
