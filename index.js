@@ -15,11 +15,11 @@ const parse = message => JSON.parse(message)['message']
 const coffeeEP = `${server}/coffee`
 
 // WebSocket
-/*const openSocket() => {
+const openSocket() => {
   return new WebSocket(coffeeEP, {
     perMessageDeflate: false
   })
-}*/
+}
 
 // Interace
 const coffeeStatus = () => {
