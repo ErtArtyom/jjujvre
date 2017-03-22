@@ -14,10 +14,20 @@ const parse = message => JSON.parse(message)['message']
 const coffeeEP = `${server}/coffee`
 const coffeeWS = `ws${ssl}://${host}`
 
-// WebSocket
+// Returns promise of WebSockets to come
 const openSocket = () => {
-  return new WebSocket(coffeeWS, {
-    perMessageDeflate: false
+  return new Promise((resolve, error) => {
+    var ws = new WebSocket(coffeeWS, {
+      perMessageDeflate: false
+    }).on('error', (err) => {
+      console.log(`socket error: ${err}`)
+      error(err)
+    }).on('close', (code, reason) => {
+      console.log(`socket closed. code: ${code} | reason: ${reason}`)
+    }).on('open', () => {
+      console.log('socket opened')
+    })
+    resolve(ws)
   })
 }
 
