@@ -3,8 +3,8 @@ Small node js library to talk to the kadfe server.
 
 ## Methods
 + `coffeeStatus` - Get the status of the coffee.
-+ `claimCoffee` - Claim the coffee.
-+ `makeCoffee` - Announce coffee has been made.
++ `clearCoffee` - Set coffee status to `unavailable`.
++ `makeCoffee` - Set coffee status to `available`.
 + `openSocket` - Open a websocket to be notified whenever the status changes.
 
 *!!* All methods return promises *!!*

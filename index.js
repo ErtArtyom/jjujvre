@@ -43,7 +43,7 @@ const coffeeStatus = () => {
   )
 }
 
-const claimCoffee = () => {
+const clearCoffee = () => {
   return new Promise((resolve, error) =>
     request.delete(coffeeEP,
       (err, resp, bod) => {
@@ -65,4 +65,4 @@ const makeCoffee = () => {
   )
 }
 
-module.exports = { openSocket, coffeeStatus, claimCoffee, makeCoffee }
+module.exports = { openSocket, coffeeStatus, clearCoffee, makeCoffee }
