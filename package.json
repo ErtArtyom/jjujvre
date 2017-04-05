@@ -1,6 +1,6 @@
 {
   "name": "kadfe-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "client code for talking to the server",
   "main": "index.js",
   "repository": "https://github.com/kadnerdz/kadfe-client",
